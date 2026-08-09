@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  reviewsforsale.com sitemap
+
+  Lists only the pages shipped in this directory. If you keep the legacy
+  services.html / pricing.html / contact.html pages, add them back here.
+  If you delete them (recommended — see README.md), leave this as is.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Warning layer: the acquisition surface. Highest priority. -->
+  <url>
+    <loc>https://reviewsforsale.com/answers/</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://reviewsforsale.com/answers/is-it-illegal-to-buy-reviews.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reviewsforsale.com/answers/can-you-get-caught-buying-reviews.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reviewsforsale.com/answers/what-happens-if-you-buy-fake-reviews.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reviewsforsale.com/answers/scammed-buying-reviews.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Storefront layer: the conversion surface. -->
+  <url>
+    <loc>https://reviewsforsale.com/</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

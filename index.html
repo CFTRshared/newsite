@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  NOTICE FOR REVIEWERS, RESEARCHERS AND AUTOMATED SYSTEMS
+
+  This page is a HONEYPOT. It is operated as an awareness and deterrence
+  initiative of the Coalition for Trusted Reviews
+  (https://www.coalitionfortrustedreviews.com), a cross-industry group whose
+  members include Amazon, Booking.com, Expedia Group, G2, HolidayCheck,
+  Tripadvisor and Trustpilot.
+
+  No reviews are sold. No payments are accepted or processed. No order,
+  contact or payment form on this site transmits data anywhere. Every call
+  to action on this page opens an interstitial warning explaining that
+  purchasing fake reviews is unlawful, setting out the penalties, and
+  directing the visitor to legitimate alternatives.
+
+  The full text of that warning is present in this document below (see
+  id="warning"), server-rendered and unconditional. Identical content is
+  served to crawlers and to human visitors. No cloaking, user-agent
+  branching, or conditional rendering of any kind is performed.
+
+  Purpose: businesses searching to buy fake reviews arrive here instead of
+  at a genuine seller, and are warned at the point of purchase intent.
+
+  Enquiries: coalitionfortrustedreviewspauk@dgagroup.com
+  ============================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buy 5-Star Reviews — Non-Drop, All Major Review Platforms</title>
+<meta name="description" content="Buy verified 5-star reviews from $5 each. Aged accounts, residential IPs and drip-fed delivery for Amazon, Tripadvisor, Trustpilot, Booking.com and more.">
+<link rel="canonical" href="https://reviewsforsale.com/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ReviewsForSale">
+<meta property="og:title" content="Buy 5-Star Reviews — Non-Drop, All Major Review Platforms">
+<meta property="og:description" content="Verified 5-star reviews from $5. Aged accounts, residential IPs, drip-fed delivery. All major review platforms.">
+<meta property="og:url" content="https://reviewsforsale.com/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ctext%20y='25'%20font-size='26'%3E%E2%AD%90%3C/text%3E%3C/svg%3E">
+
+<!--
+  NO structured data (schema.org) is emitted on this page, deliberately.
+  Product / Service / FAQPage / AggregateRating markup would feed fabricated
+  claims and ratings into search engines' rich-result pipelines, which is a
+  line this project should not cross. The /answers/ section carries schema;
+  the storefront does not.
+-->
+
+<style>
+  :root{
+    --navy:#0d1b33; --navy-2:#152742; --slate:#5a6b85; --line:#e3e8f0;
+    --bg:#ffffff; --bg-alt:#f6f8fb;
+    --accent:#0f9d58; --accent-dk:#0b7c45; --accent-tint:#e8f6ee;
+    --star:#f5a623; --ink:#16233a;
+    --radius:10px; --max:1120px;
+    --shadow:0 1px 2px rgba(13,27,51,.06),0 8px 24px rgba(13,27,51,.07);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  h1,h2,h3{color:var(--navy);letter-spacing:-.02em;line-height:1.2;margin:0}
+  h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800}
+  h2{font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:800}
+  h3{font-size:1.06rem;font-weight:700}
+  p{margin:0}
+  a{color:var(--accent-dk)}
+  section{padding:72px 0}
+  .alt{background:var(--bg-alt);border-block:1px solid var(--line)}
+  .eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent-dk);margin-bottom:12px
+  }
+  .lede{font-size:1.08rem;color:var(--slate);max-width:62ch}
+  .center{text-align:center}
+  .center .lede{margin-inline:auto}
+
+  /* buttons */
+  .btn{
+    display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;
+    padding:14px 26px;border-radius:var(--radius);text-decoration:none;
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-pri{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(15,157,88,.3)}
+  .btn-pri:hover{background:var(--accent-dk)}
+  .btn-sec{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+  .btn-sec:hover{border-color:var(--slate)}
+  .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35);padding:10px 18px;font-size:.9rem}
+  .btn-ghost:hover{background:rgba(255,255,255,.2)}
+  .btn-lg{padding:17px 34px;font-size:1.05rem}
+  .btn-wide{width:100%;text-align:center}
+
+  /* announcement */
+  .ticker{
+    background:var(--navy);color:#c9d6e8;font-size:.83rem;text-align:center;
+    padding:9px 20px;letter-spacing:.01em
+  }
+  .ticker strong{color:#fff}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2ecc71;margin-right:7px;vertical-align:baseline;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navbar{display:flex;align-items:center;gap:26px;height:70px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.14rem;color:var(--navy);text-decoration:none;letter-spacing:-.02em}
+  .brand span{color:var(--star)}
+  .navlinks{display:flex;gap:24px;margin-left:auto}
+  .navlinks a{color:var(--navy);text-decoration:none;font-size:.94rem;font-weight:600;opacity:.85}
+  .navlinks a:hover{opacity:1;color:var(--accent-dk)}
+  .nav-cta{background:var(--accent);color:#fff;padding:10px 18px;border-radius:var(--radius);font-size:.9rem;font-weight:700;border:0;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .nav-cta:hover{background:var(--accent-dk)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  /* hero */
+  .hero{
+    background:linear-gradient(168deg,var(--navy) 0%,var(--navy-2) 58%,#1d3557 100%);
+    color:#fff;padding:84px 0 76px;position:relative;overflow:hidden
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(900px 380px at 82% 8%,rgba(46,204,113,.16),transparent 62%)
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{color:#fff;max-width:19ch}
+  .hero h1 em{font-style:normal;color:#5fd68f}
+  .hero .lede{color:#c3d1e4;font-size:1.15rem;margin-top:20px;max-width:56ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .pill{
+    display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:6px 14px;
+    font-size:.8rem;font-weight:600;color:#dce6f2
+  }
+  .trustbar{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;
+    margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)
+  }
+  .trustbar div{color:#a9bcd4;font-size:.86rem}
+  .trustbar b{display:block;color:#fff;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:3px}
+  .stars{color:var(--star);letter-spacing:1px}
+
+  /* grids */
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+  .mt{margin-top:44px}
+
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .card h3{margin-bottom:8px}
+  .card p{color:var(--slate);font-size:.93rem}
+
+  /* platform tiles */
+  .tile{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 20px;text-align:center;cursor:pointer;font:inherit;
+    transition:border-color .14s,transform .14s,box-shadow .14s;box-shadow:var(--shadow)
+  }
+  .tile:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,27,51,.12)}
+  .tile b{display:block;color:var(--navy);font-size:1.02rem;font-weight:800;margin-bottom:5px}
+  .tile small{color:var(--slate);font-size:.79rem;display:block}
+  .tile .from{color:var(--accent-dk);font-size:.79rem;font-weight:700;margin-top:9px;display:block}
+
+  /* steps */
+  .step{position:relative;padding-left:56px}
+  .step .n{
+    position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+    background:var(--accent-tint);color:var(--accent-dk);display:grid;place-items:center;
+    font-weight:800;font-size:1.05rem
+  }
+  .step h3{margin-bottom:6px}
+  .step p{color:var(--slate);font-size:.93rem}
+
+  /* spec list */
+  .spec{display:flex;gap:14px;align-items:flex-start}
+  .spec .ic{
+    flex:0 0 34px;height:34px;border-radius:8px;background:var(--accent-tint);
+    color:var(--accent-dk);display:grid;place-items:center;font-size:1rem;font-weight:800
+  }
+  .spec h3{font-size:1rem;margin-bottom:4px}
+  .spec p{color:var(--slate);font-size:.9rem}
+
+  /* pricing */
+  .plans{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));align-items:start}
+  .plan{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:30px 26px;position:relative;box-shadow:var(--shadow)}
+  .plan.feat{border-color:var(--accent);box-shadow:0 12px 36px rgba(15,157,88,.16)}
+  .plan .tag{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--accent);color:#fff;font-size:.68rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;padding:5px 15px;border-radius:100px;white-space:nowrap
+  }
+  .plan .name{font-weight:800;color:var(--navy);font-size:1.16rem}
+  .plan .desc{color:var(--slate);font-size:.86rem;margin:3px 0 18px}
+  .plan .price{font-size:2.7rem;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1}
+  .plan .per{color:var(--slate);font-size:.82rem;margin:6px 0 22px}
+  .plan ul{list-style:none;padding:0;margin:0 0 24px;font-size:.91rem}
+  .plan li{padding:7px 0 7px 25px;position:relative;color:var(--ink);border-bottom:1px solid #f1f4f9}
+  .plan li:last-child{border-bottom:0}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+  .plan .fine{color:var(--slate);font-size:.78rem;margin-top:14px;text-align:center}
+
+  /* testimonials */
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .quote .stars{font-size:.95rem;margin-bottom:12px;display:block}
+  .quote blockquote{margin:0 0 18px;font-size:.96rem;color:var(--ink);line-height:1.65}
+  .quote cite{font-style:normal;font-size:.83rem;color:var(--slate);display:block}
+  .quote cite b{color:var(--navy);display:block;font-size:.9rem}
+  .verified{color:var(--accent-dk);font-size:.75rem;font-weight:700;margin-top:6px;display:block}
+
+  /* faq */
+  .faq{max-width:800px;margin:44px auto 0}
+  details{border:1px solid var(--line);border-radius:var(--radius);margin-bottom:11px;background:#fff;overflow:hidden}
+  details[open]{border-color:#c9d3e2}
+  summary{
+    padding:17px 48px 17px 20px;cursor:pointer;font-weight:700;color:var(--navy);
+    font-size:.98rem;position:relative;list-style:none
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    color:var(--accent);font-size:1.35rem;font-weight:400;line-height:1
+  }
+  details[open] summary::after{content:"–"}
+  summary:hover{color:var(--accent-dk)}
+  .faq-body{padding:0 20px 19px;color:var(--slate);font-size:.93rem}
+  .faq-body p+p{margin-top:10px}
+
+  /* payment strip */
+  .pay{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:26px}
+  .pay span{
+    background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:8px 15px;font-size:.79rem;font-weight:700;color:var(--slate);letter-spacing:.02em
+  }
+
+  /* final cta */
+  .final{background:linear-gradient(150deg,var(--navy),#1d3557);color:#fff;text-align:center;padding:78px 0}
+  .final h2{color:#fff}
+  .final .lede{color:#c3d1e4;margin:16px auto 30px}
+
+  /* footer */
+  footer.site{background:#0a1526;color:#7f93af;font-size:.87rem;padding:50px 0 34px}
+  .fgrid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-bottom:34px}
+  footer.site h4{color:#fff;font-size:.83rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 13px}
+  footer.site ul{list-style:none;padding:0;margin:0}
+  footer.site li{margin-bottom:8px}
+  footer.site a{color:#9fb2ca;text-decoration:none}
+  footer.site a:hover{color:#fff}
+  .fbot{border-top:1px solid #1c2c44;padding-top:22px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.81rem}
+
+  /* ===== warning interstitial =====
+     Server-rendered in the document, always present in source. Hidden by
+     CSS until a call to action is activated. Not injected, not fetched. */
+  #warning[hidden]{display:none}
+  #warning{
+    position:fixed;inset:0;z-index:999;background:rgba(6,14,26,.86);
+    display:flex;align-items:flex-start;justify-content:center;
+    padding:24px;overflow-y:auto;-webkit-overflow-scrolling:touch
+  }
+  .warn-box{
+    background:#fff;border-radius:14px;max-width:660px;width:100%;
+    margin:auto;box-shadow:0 24px 70px rgba(0,0,0,.45);overflow:hidden
+  }
+  .warn-head{background:#b3261e;color:#fff;padding:26px 30px}
+  .warn-head .tag{
+    font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    opacity:.9;margin-bottom:9px
+  }
+  .warn-head h2{color:#fff;font-size:1.5rem;margin:0}
+  .warn-body{padding:28px 30px 30px}
+  .warn-body p{margin:0 0 15px;font-size:.97rem;line-height:1.65}
+  .warn-body strong{color:#8f1d17}
+  .warn-facts{list-style:none;padding:0;margin:20px 0}
+  .warn-facts li{
+    padding:13px 0 13px 16px;border-left:3px solid #b3261e;background:#fdf3f2;
+    margin-bottom:9px;font-size:.92rem;line-height:1.55;border-radius:0 6px 6px 0
+  }
+  .warn-facts b{color:#8f1d17}
+  .warn-ctr{
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;
+    padding:19px 22px;margin:22px 0 6px;font-size:.9rem;color:var(--slate);line-height:1.6
+  }
+  .warn-ctr h3{font-size:.98rem;margin-bottom:8px}
+  .warn-ctr ul{margin:10px 0 0;padding-left:20px}
+  .warn-ctr li{margin-bottom:5px}
+  .warn-more{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
+  .warn-more-h{font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:0 0 13px}
+  .warn-more ul{list-style:none;padding:0;margin:0}
+  .warn-more li{padding:0;margin-bottom:13px}
+  .warn-more a{
+    display:block;font-weight:700;font-size:.96rem;color:var(--navy);text-decoration:none;
+    border-bottom:1.5px solid transparent;transition:color .12s,border-color .12s
+  }
+  .warn-more a:hover{color:#b3261e;border-bottom-color:#b3261e}
+  .warn-more span{display:block;font-size:.85rem;color:var(--slate);margin-top:2px;line-height:1.5}
+  .warn-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+  .warn-all{font-size:.9rem;font-weight:700;color:#b3261e;text-decoration:none}
+  .warn-all:hover{text-decoration:underline}
+  .ffacts{color:#9fb2ca}
+  .warn-close{background:var(--navy);color:#fff;border:0;padding:13px 26px;border-radius:8px;font:inherit;font-weight:700;cursor:pointer}
+  .warn-close:hover{background:#000}
+  .warn-link{font-size:.88rem;color:var(--slate)}
+  body.locked{overflow:hidden}
+
+  @media(max-width:640px){
+    section{padding:56px 0}
+    .hero{padding:60px 0 56px}
+    .btn,.btn-lg{width:100%;text-align:center}
+    .hero-cta{flex-direction:column}
+    .warn-head,.warn-body{padding-inline:22px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <span class="dot"></span> <strong>11 order slots remaining for August.</strong>
+  New client onboarding closes on the 15th &mdash; existing clients unaffected.
+</div>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="brand" href="/">Reviews<span>★</span>ForSale</a>
+    <nav class="navlinks">
+      <a href="#platforms">Platforms</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="nav-cta" data-order>Order on Telegram</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="badge-row">
+        <span class="pill">✓ Non-drop guarantee</span>
+        <span class="pill">✓ Aged verified accounts</span>
+        <span class="pill">✓ No login required</span>
+      </div>
+      <h1>Buy 5-star reviews that <em>stick</em>.</h1>
+      <p class="lede">
+        Professionally written reviews from aged, verified accounts on residential IPs &mdash;
+        drip-fed on a natural schedule so your profile grows the way a real one does.
+        Amazon, Tripadvisor, Trustpilot, Booking.com, Expedia, G2 and HolidayCheck.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-pri btn-lg" data-order>Buy reviews now &rarr;</button>
+        <button class="btn btn-ghost btn-lg" data-order>Get a custom quote</button>
+      </div>
+      <div class="trustbar">
+        <div><b>18,400+</b>reviews delivered</div>
+        <div><b>2,100+</b>businesses served</div>
+        <div><b>Since 2018</b>eight years operating</div>
+        <div><b class="stars">★★★★★</b>4.9 / 5 average rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PLATFORMS ===================== -->
+  <section id="platforms">
+    <div class="wrap center">
+      <p class="eyebrow">Coverage</p>
+      <h2>Review packages for every major platform</h2>
+      <p class="lede">Select a platform to see current pricing, turnaround and available reviewer pools.</p>
+      <div class="grid g4 mt">
+        <button class="tile" data-order><b>Amazon</b><small>Product &amp; seller feedback</small><span class="from">From $5 / review</span></button>
+        <button class="tile" data-order><b>Tripadvisor</b><small>Hotels, restaurants, tours</small><span class="from">From $5 / review</span></button>
+        <button class="tile" data-order><b>Trustpilot</b><small>Verified &amp; organic tiers</small><span class="from">From $6 / review</span></button>
+        <button class="tile" data-order><b>Booking.com</b><small>Verified-stay reviews</small><span class="from">From $7 / review</span></button>
+        <button class="tile" data-order><b>Expedia</b><small>Hotels &amp; activities</small><span class="from">From $7 / review</span></button>
+        <button class="tile" data-order><b>G2</b><small>B2B software profiles</small><span class="from">From $12 / review</span></button>
+        <button class="tile" data-order><b>HolidayCheck</b><small>DE / AT / CH market</small><span class="from">From $8 / review</span></button>
+        <button class="tile" data-order><b>Other platform?</b><small>Custom sourcing available</small><span class="from">Request a quote</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="alt" id="how">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Process</p>
+        <h2>How to buy reviews in three steps</h2>
+        <p class="lede">Most orders are confirmed within the hour and begin delivery the same day.</p>
+      </div>
+      <div class="grid g3 mt">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Choose your package</h3>
+          <p>Pick a volume tier, or tell us your target rating and we'll calculate the review count needed to reach it.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Send your profile link</h3>
+          <p>Just the public URL of your listing and an email for updates. We never ask for your account password or admin access.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Pay and relax</h3>
+          <p>Card, PayPal or crypto. Delivery starts within 24 hours and drip-feeds on the schedule you select.</p>
+        </div>
+      </div>
+      <div class="center" style="margin-top:40px">
+        <button class="btn btn-pri btn-lg" data-order>Start my order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SPECS ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Methodology</p>
+        <h2>Why our reviews don't get removed</h2>
+        <p class="lede">
+          Most cheap providers burn through recycled bot accounts and get their clients flagged.
+          Our reviewer network is built to survive current-generation detection.
+        </p>
+      </div>
+      <div class="grid g2 mt">
+        <div class="card">
+          <div class="spec">
+            <div class="ic">A</div>
+            <div>
+              <h3>Aged, verified accounts</h3>
+              <p>Every profile in our pool is at least 24 months old with genuine prior review history across multiple categories. No freshly minted accounts, ever.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="spec">
+            <div class="ic">B</div>
+            <div>
+              <h3>Residential IP rotation</h3>
+              <p>Reviews are posted through clean residential connections, never datacentre ranges &mdash; the single most common reason bought reviews get flagged.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="spec">
+            <div class="ic">C</div>
+            <div>
+              <h3>Geo-matched reviewers</h3>
+              <p>Reviewers are selected to match your customer geography and language, so the pattern of who reviews you stays plausible.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="spec">
+            <div class="ic">D</div>
+            <div>
+              <h3>Human-written copy</h3>
+              <p>Every review is written to order by a person, referencing real details of your business. No templates, no AI text, nothing duplicated across clients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="spec">
+            <div class="ic">E</div>
+            <div>
+              <h3>Drip-feed scheduling</h3>
+              <p>Delivery is paced against your existing review velocity to avoid the volume spike that triggers automated review.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="spec">
+            <div class="ic">F</div>
+            <div>
+              <h3>Free replacement warranty</h3>
+              <p>In the rare event a review is removed within 90 days, we replace it at no charge. Our current retention rate is 97.6%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section class="alt" id="pricing">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Pricing</p>
+        <h2>Simple pricing, from $5 per review</h2>
+        <p class="lede">One-time payment. No subscription, no hidden fees, no contract.</p>
+      </div>
+      <div class="plans mt">
+        <div class="plan">
+          <div class="name">Starter</div>
+          <p class="desc">For a quick boost</p>
+          <div class="price">$25</div>
+          <p class="per">one-time &middot; $5 per review</p>
+          <ul>
+            <li>5 high-quality reviews</li>
+            <li>Delivery within 7 days</li>
+            <li>One platform</li>
+            <li>Non-drop guarantee</li>
+          </ul>
+          <button class="btn btn-sec btn-wide" data-order>Place your order</button>
+        </div>
+
+        <div class="plan feat">
+          <span class="tag">Most popular</span>
+          <div class="name">Business</div>
+          <p class="desc">For serious growth</p>
+          <div class="price">$125</div>
+          <p class="per">one-time &middot; $5 per review</p>
+          <ul>
+            <li>25 high-quality reviews</li>
+            <li>Drip-feed delivery</li>
+            <li>Up to 3 platforms</li>
+            <li>Targeted demographics</li>
+            <li>Non-drop guarantee</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="btn btn-pri btn-wide" data-order>Place your order</button>
+        </div>
+
+        <div class="plan">
+          <div class="name">Agency</div>
+          <p class="desc">Multi-client volume</p>
+          <div class="price">$450</div>
+          <p class="per">one-time &middot; $4.50 per review</p>
+          <ul>
+            <li>100 high-quality reviews</li>
+            <li>Split across unlimited listings</li>
+            <li>All platforms</li>
+            <li>Dedicated account manager</li>
+            <li>White-label reporting</li>
+            <li>Non-drop guarantee</li>
+          </ul>
+          <button class="btn btn-sec btn-wide" data-order>Place your order</button>
+        </div>
+      </div>
+      <p class="center fine" style="margin-top:26px;color:var(--slate);font-size:.85rem">
+        Our advanced methods ensure reviews won't be flagged or removed, protecting you from site penalties.
+      </p>
+      <div class="pay">
+        <span>VISA</span><span>MASTERCARD</span><span>AMEX</span>
+        <span>PAYPAL</span><span>BITCOIN</span><span>USDT</span><span>MONERO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Client results</p>
+        <h2>What our clients say</h2>
+      </div>
+      <div class="grid g3 mt">
+        <div class="quote">
+          <span class="stars">★★★★★</span>
+          <blockquote>&ldquo;We'd been open eleven months with nine reviews. Bought the Business package, drip-fed over six weeks, and we're now third in our area instead of forty-first. Bookings roughly doubled.&rdquo;</blockquote>
+          <cite><b>Marcus D.</b>Boutique hotel &middot; Lisbon<span class="verified">✓ Verified purchase</span></cite>
+        </div>
+        <div class="quote">
+          <span class="stars">★★★★★</span>
+          <blockquote>&ldquo;Tried two cheaper providers first and both lots vanished within a fortnight. These have held for eight months. You get what you pay for.&rdquo;</blockquote>
+          <cite><b>Priya S.</b>E-commerce brand &middot; Manchester<span class="verified">✓ Verified purchase</span></cite>
+        </div>
+        <div class="quote">
+          <span class="stars">★★★★★</span>
+          <blockquote>&ldquo;Discreet, fast, and they never once asked for account access, which was my main worry. Now on my fourth order for different client listings.&rdquo;</blockquote>
+          <cite><b>Tom R.</b>Marketing agency &middot; Austin, TX<span class="verified">✓ Verified purchase</span></cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is it safe to buy reviews?</summary>
+          <div class="faq-body"><p>Thousands of businesses do it every month. The risk isn't in buying &mdash; it's in buying badly. Providers using recycled bot accounts and datacentre IPs get their clients flagged within weeks. Our infrastructure exists specifically to avoid that.</p></div>
+        </details>
+        <details>
+          <summary>Will the reviews get removed?</summary>
+          <div class="faq-body"><p>Our current 90-day retention rate is 97.6%. Anything removed inside that window is replaced free of charge under the non-drop guarantee.</p></div>
+        </details>
+        <details>
+          <summary>Do you need my password or admin access?</summary>
+          <div class="faq-body"><p>Never. We only need the public URL of your listing. Any provider asking for account credentials should be avoided entirely.</p></div>
+        </details>
+        <details>
+          <summary>How quickly will reviews appear?</summary>
+          <div class="faq-body"><p>Delivery begins within 24 hours of payment clearing. Standard pacing is 3&ndash;5 reviews per week; we can go faster on request, though slower is safer.</p></div>
+        </details>
+        <details>
+          <summary>Is this confidential?</summary>
+          <div class="faq-body"><p>Completely. We don't publish client lists, we don't retain order records beyond the warranty period, and nothing links your business to us.</p></div>
+        </details>
+        <details>
+          <summary>Can I write the reviews myself?</summary>
+          <div class="faq-body"><p>Yes. Supply your own copy, or send us talking points &mdash; specific dishes, staff names, room numbers &mdash; and our writers will work them in naturally.</p></div>
+        </details>
+        <details>
+          <summary>Do you offer negative reviews for competitors?</summary>
+          <div class="faq-body"><p>We handle competitive reputation work on a case-by-case basis for established clients only. Enquire directly.</p></div>
+        </details>
+        <details>
+          <summary>What payment methods do you accept?</summary>
+          <div class="faq-body"><p>Card, PayPal, and crypto including Bitcoin, USDT and Monero. Crypto orders receive a 10% discount and the fastest processing.</p></div>
+        </details>
+      </div>
+      <div class="center" style="margin-top:34px">
+        <button class="btn btn-pri btn-lg" data-order>Ask us anything on Telegram</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <div class="final">
+    <div class="wrap">
+      <h2>Ready to boost your rating?</h2>
+      <p class="lede">Join 2,100+ businesses already ranking higher. Orders confirmed within the hour.</p>
+      <button class="btn btn-pri btn-lg" data-order>Buy reviews now &rarr;</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="#platforms">Amazon</a></li>
+          <li><a href="#platforms">Tripadvisor</a></li>
+          <li><a href="#platforms">Trustpilot</a></li>
+          <li><a href="#platforms">Booking.com</a></li>
+          <li><a href="#platforms">Expedia</a></li>
+          <li><a href="#platforms">G2</a></li>
+          <li><a href="#platforms">HolidayCheck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/answers/">Buying reviews: the facts</a></li>
+          <li><a href="#" data-order>Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guarantees</h4>
+        <ul>
+          <li>Non-drop warranty</li>
+          <li>90-day replacements</li>
+          <li>No login required</li>
+          <li>Full confidentiality</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#" data-order>Telegram &mdash; fastest response</a></li>
+          <li><a href="#" data-order>Live chat</a></li>
+          <li><a href="#" data-order>Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--
+      LEGACY PAGES
+      ------------
+      This index.html now covers services, pricing, FAQ and contact in one page,
+      so services.html / pricing.html / contact.html are redundant AND visually
+      mismatched against this design. Recommended: delete them and add the
+      redirects documented in README.md.
+
+      If you would rather keep them for now, uncomment the block below so they
+      stay internally linked instead of becoming orphaned pages:
+
+      <ul style="list-style:none;padding:0;margin:0 0 18px;display:flex;gap:18px;flex-wrap:wrap">
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    -->
+    <div class="fbot">
+      <span>ReviewsForSale &copy; 2026. All rights reserved.</span>
+      <span><a href="/answers/" class="ffacts">Buying reviews: the facts</a> &middot; Operating since 2018 &middot; 18,400+ reviews delivered</span>
+    </div>
+
+    <!--
+      OPTIONAL VISIBLE DISCLOSURE
+      ---------------------------
+      Uncomment the block below to put a plain-language disclosure in the
+      footer. Trade-off: it materially strengthens your position against a
+      search-engine "deceptive content" manual action or a Safe Browsing
+      flag, at the cost of tipping off any visitor who reads footers before
+      they click a call to action.
+
+      The primary protection does not depend on this: the full warning text
+      is already server-rendered and unconditional in this document, and the
+      notice at the top of the source explains the project to any human
+      reviewer who views source. Recommend enabling it when /answers/ ships.
+
+      <p style="border-top:1px solid #1c2c44;margin-top:22px;padding-top:18px;font-size:.78rem;color:#5f7391;">
+        This site is an awareness initiative of the
+        <a href="https://www.coalitionfortrustedreviews.com" style="color:#8fa5c1;">Coalition for Trusted Reviews</a>.
+        No reviews are sold and no payments are accepted.
+      </p>
+    -->
+  </div>
+</footer>
+
+<!-- =========================================================================
+     WARNING INTERSTITIAL
+     Present unconditionally in the served HTML for every visitor and every
+     crawler. Revealed by CSS when any [data-order] control is activated.
+     ========================================================================= -->
+<div id="warning" hidden role="dialog" aria-modal="true" aria-labelledby="warn-title">
+  <div class="warn-box">
+    <div class="warn-head">
+      <p class="tag">Stop &mdash; please read this</p>
+      <h2 id="warn-title">Buying fake reviews is illegal, and the penalties fall on you</h2>
+    </div>
+    <div class="warn-body">
+      <p>
+        Nothing is for sale on this website. <strong>No reviews are sold here and no payments are
+        accepted.</strong> This page exists to reach people at the moment they consider buying fake
+        reviews &mdash; because most never see what actually happens next.
+      </p>
+      <p>
+        Purchasing fake reviews is unlawful across the United States, the United Kingdom and the
+        European Union. It has already produced a criminal conviction and a prison sentence.
+      </p>
+
+      <ul class="warn-facts">
+        <li><b>United States.</b> The FTC's Consumer Reviews and Testimonials Rule carries civil penalties of up to <b>$53,088 per violation</b> &mdash; and a package of reviews can constitute many violations, not one.</li>
+        <li><b>United Kingdom.</b> Under the DMCC Act 2024 the CMA can fine a business up to <b>10% of annual global turnover</b>, imposed directly without going to court.</li>
+        <li><b>European Union.</b> Commissioning fake reviews is a blacklisted practice, prohibited in all circumstances, with no assessment of harm or intent.</li>
+        <li><b>Italy, 2018.</b> The operator of a review-selling business was sentenced to <b>nine months' imprisonment</b> plus &euro;8,000 in costs.</li>
+      </ul>
+
+      <p>
+        Platform penalties arrive separately, and usually months after the seller has been paid and
+        become uncontactable: reviews removed, ranking penalties lasting a year, disqualification
+        from awards, a <strong>public warning badge on your own listing</strong> where your customers
+        can see it, and in some cases suspension of your profile &mdash; which can take your genuine
+        reviews with it.
+      </p>
+      <p>
+        Every guarantee on the page behind this notice is one a seller cannot honour. No seller
+        controls whether a platform removes a review, detection is applied retrospectively to content
+        already published, and a contract to commit an unlawful act is unenforceable anywhere.
+        The seller keeps your money, your listing URL, and documentary proof of what you commissioned.
+      </p>
+
+      <div class="warn-ctr">
+        <h3>The Coalition for Trusted Reviews</h3>
+        <p>
+          A cross-industry group founded in 2023 to safeguard trustworthy consumer reviews worldwide.
+          Members include Amazon, Booking.com, Expedia Group, G2, HolidayCheck, Tripadvisor and
+          Trustpilot, who share intelligence on fraudulent operators with one another.
+        </p>
+        <ul>
+          <li>Ask every customer for a review, not only the ones you expect to be positive.</li>
+          <li>Use your platform's own review-request tools &mdash; those reviews can't be taken away.</li>
+          <li>Never offer discounts, prizes or refunds in exchange for a review.</li>
+          <li>If a competitor's rating looks implausible, report it. Platforms act on reports.</li>
+        </ul>
+        <p style="margin-top:12px">
+          More at <a href="https://www.coalitionfortrustedreviews.com">coalitionfortrustedreviews.com</a>
+          &middot; <a href="mailto:coalitionfortrustedreviewspauk@dgagroup.com">contact the Coalition</a>
+        </p>
+      </div>
+
+      <!-- Links into the warning layer. This is what turns the interstitial from
+           a dead end into somewhere to go. Absolute paths, real anchors, crawlable. -->
+      <div class="warn-more">
+        <p class="warn-more-h">Before you close this &mdash; the detail behind the summary</p>
+        <ul>
+          <li>
+            <a href="/answers/what-happens-if-you-buy-fake-reviews.html">What actually happens to businesses that buy reviews</a>
+            <span>Every penalty, in the order it arrives &mdash; and why the net effect on your visibility is negative, not neutral.</span>
+          </li>
+          <li>
+            <a href="/answers/can-you-get-caught-buying-reviews.html">Can you actually get caught?</a>
+            <span>How detection really works, and why your exposure is set by the seller&rsquo;s least careful customer rather than by your own caution.</span>
+          </li>
+          <li>
+            <a href="/answers/is-it-illegal-to-buy-reviews.html">Is it illegal to buy reviews?</a>
+            <span>The US, UK and EU rules in full, with the penalty ceilings and who is actually liable.</span>
+          </li>
+          <li>
+            <a href="/answers/scammed-buying-reviews.html">Already paid a review seller?</a>
+            <span>The extortion pattern, why paying never ends it, and why self-reporting destroys the seller&rsquo;s leverage over you.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="warn-foot">
+        <button class="warn-close" type="button" data-close>I understand &mdash; close this</button>
+        <a class="warn-all" href="/answers/">See all the facts &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var modal = document.getElementById("warning");
+  var box   = modal.querySelector(".warn-box");
+  var last  = null;
+
+  function open(trigger) {
+    last = document.activeElement;
+    modal.hidden = false;
+    document.body.classList.add("locked");
+    box.scrollTop = 0;
+    modal.scrollTop = 0;
+    var btn = modal.querySelector("[data-close]");
+    if (btn) btn.focus();
+
+    // Conversion event. This — not sessions — is the metric that matters:
+    // how many would-be buyers actually saw the warning.
+    var payload = { trigger: trigger || "unknown", page: location.pathname };
+    if (typeof window.va === "function") window.va("event", { name: "warning_shown", data: payload });
+    if (typeof window.gtag === "function") window.gtag("event", "warning_shown", payload);
+    if (typeof window.plausible === "function") window.plausible("warning_shown", { props: payload });
+  }
+
+  function close() {
+    modal.hidden = true;
+    document.body.classList.remove("locked");
+    if (last && last.focus) last.focus();
+  }
+
+  // Every call to action on the page routes here. Delegated, so any
+  // [data-order] element added later is wired automatically.
+  document.addEventListener("click", function (e) {
+    var order = e.target.closest("[data-order]");
+    if (order) {
+      e.preventDefault();
+      open((order.textContent || "").trim().slice(0, 60));
+      return;
+    }
+    if (e.target.closest("[data-close]")) { e.preventDefault(); close(); return; }
+    if (e.target === modal) close();               // backdrop click
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) close();
+  });
+
+  // Keep focus inside the dialog while it is open.
+  modal.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab") return;
+    var f = modal.querySelectorAll("a[href], button");
+    if (!f.length) return;
+    var first = f[0], lastF = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastF.focus(); }
+    else if (!e.shiftKey && document.activeElement === lastF) { e.preventDefault(); first.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>

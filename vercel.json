@@ -1,0 +1,21 @@
+{
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/answers",
+      "destination": "/answers/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/answers/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}

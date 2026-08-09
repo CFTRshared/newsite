@@ -1,0 +1,20 @@
+# reviewsforsale.com
+#
+# This domain is operated as an awareness initiative of the Coalition for
+# Trusted Reviews (coalitionfortrustedreviews.com), whose members include
+# Amazon, Booking.com, Expedia Group, Glassdoor, Tripadvisor and Trustpilot.
+#
+# The pages at the root of this domain present a simulated review-selling
+# storefront. No reviews are sold and no payments are accepted; any attempt
+# to place an order returns a warning explaining that purchasing fake
+# reviews is unlawful. The /answers/ section publishes the sourced
+# educational material behind that warning.
+#
+# Identical content is served to crawlers and to human visitors.
+#
+# Contact: coalitionfortrustedreviewspauk@dgagroup.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://reviewsforsale.com/sitemap.xml
