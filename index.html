@@ -260,56 +260,81 @@
 
   /* ===== warning interstitial =====
      Server-rendered in the document, always present in source. Hidden by
-     CSS until a call to action is activated. Not injected, not fetched. */
+     CSS until a call to action is activated. Not injected, not fetched.
+
+     LAYOUT CONTRACT: the overlay centres the dialog and the page itself
+     never scrolls. The dialog is capped to the viewport and split in three:
+     a pinned red header, a body that scrolls internally only on very short
+     viewports, and a pinned footer holding the actions. Consequence — the
+     red header and the "Learn more" button are always on screen the moment
+     the dialog opens, at any window size. */
   #warning[hidden]{display:none}
   #warning{
-    position:fixed;inset:0;z-index:999;background:rgba(6,14,26,.86);
-    display:flex;align-items:flex-start;justify-content:center;
-    padding:24px;overflow-y:auto;-webkit-overflow-scrolling:touch
+    position:fixed;inset:0;z-index:999;background:rgba(6,14,26,.88);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;overscroll-behavior:contain
   }
   .warn-box{
-    background:#fff;border-radius:14px;max-width:660px;width:100%;
-    margin:auto;box-shadow:0 24px 70px rgba(0,0,0,.45);overflow:hidden
+    background:#fff;border-radius:14px;max-width:620px;width:100%;
+    max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);
+    display:flex;flex-direction:column;overflow:hidden;
+    box-shadow:0 24px 70px rgba(0,0,0,.5)
   }
-  .warn-head{background:#b3261e;color:#fff;padding:26px 30px}
+
+  .warn-head{flex:0 0 auto;background:#b3261e;color:#fff;padding:18px 28px}
   .warn-head .tag{
-    font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-    opacity:.9;margin-bottom:9px
+    font-size:.67rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+    opacity:.85;margin:0 0 6px
   }
-  .warn-head h2{color:#fff;font-size:1.5rem;margin:0}
-  .warn-body{padding:28px 30px 30px}
-  .warn-body p{margin:0 0 15px;font-size:.97rem;line-height:1.65}
+  .warn-head h2{color:#fff;font-size:1.22rem;line-height:1.25;margin:0}
+
+  .warn-body{
+    flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px 28px 18px;
+    -webkit-overflow-scrolling:touch
+  }
+  .warn-body p{margin:0 0 13px;font-size:.93rem;line-height:1.6}
   .warn-body strong{color:#8f1d17}
-  .warn-facts{list-style:none;padding:0;margin:20px 0}
-  .warn-facts li{
-    padding:13px 0 13px 16px;border-left:3px solid #b3261e;background:#fdf3f2;
-    margin-bottom:9px;font-size:.92rem;line-height:1.55;border-radius:0 6px 6px 0
+
+  .warn-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+  .warn-stats div{
+    background:#fdf3f2;border-left:3px solid #b3261e;border-radius:0 6px 6px 0;
+    padding:10px 12px
   }
-  .warn-facts b{color:#8f1d17}
-  .warn-ctr{
-    background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;
-    padding:19px 22px;margin:22px 0 6px;font-size:.9rem;color:var(--slate);line-height:1.6
+  .warn-stats b{display:block;color:#8f1d17;font-size:1rem;font-weight:800;line-height:1.2}
+  .warn-stats span{display:block;font-size:.76rem;color:var(--slate);margin-top:2px;line-height:1.35}
+
+  .warn-alt{
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;
+    padding:11px 13px;font-size:.86rem;color:var(--slate);line-height:1.55;margin-top:14px
   }
-  .warn-ctr h3{font-size:.98rem;margin-bottom:8px}
-  .warn-ctr ul{margin:10px 0 0;padding-left:20px}
-  .warn-ctr li{margin-bottom:5px}
-  .warn-more{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
-  .warn-more-h{font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin:0 0 13px}
-  .warn-more ul{list-style:none;padding:0;margin:0}
-  .warn-more li{padding:0;margin-bottom:13px}
-  .warn-more a{
-    display:block;font-weight:700;font-size:.96rem;color:var(--navy);text-decoration:none;
-    border-bottom:1.5px solid transparent;transition:color .12s,border-color .12s
+  .warn-alt b{color:var(--navy)}
+  .warn-attr{
+    display:block;margin-top:9px;padding-top:9px;border-top:1px solid var(--line);
+    font-size:.72rem;line-height:1.45
   }
-  .warn-more a:hover{color:#b3261e;border-bottom-color:#b3261e}
-  .warn-more span{display:block;font-size:.85rem;color:var(--slate);margin-top:2px;line-height:1.5}
-  .warn-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
-  .warn-all{font-size:.9rem;font-weight:700;color:#b3261e;text-decoration:none}
-  .warn-all:hover{text-decoration:underline}
+
+  .warn-foot{flex:0 0 auto;border-top:1px solid var(--line);background:#fff;padding:14px 28px 16px}
+  .warn-learn{
+    display:block;width:100%;text-align:center;background:#b3261e;color:#fff;
+    text-decoration:none;font-weight:800;font-size:1.02rem;padding:13px 20px;
+    border-radius:9px;box-shadow:0 4px 14px rgba(179,38,30,.3);
+    transition:background .12s ease,transform .12s ease
+  }
+  .warn-learn:hover{background:#8f1d17;color:#fff}
+  .warn-learn:active{transform:translateY(1px)}
+  .warn-learn small{display:block;font-weight:600;font-size:.75rem;opacity:.88;margin-top:2px}
+  .warn-actions{
+    display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;
+    justify-content:space-between;margin-top:10px
+  }
+  .warn-paid{font-size:.86rem;font-weight:700;color:#b3261e;text-decoration:none}
+  .warn-paid:hover{text-decoration:underline}
+  .warn-close{
+    background:none;color:var(--slate);border:0;padding:5px 0;font:inherit;
+    font-size:.86rem;font-weight:600;cursor:pointer;text-decoration:underline
+  }
+  .warn-close:hover{color:var(--navy)}
   .ffacts{color:#9fb2ca}
-  .warn-close{background:var(--navy);color:#fff;border:0;padding:13px 26px;border-radius:8px;font:inherit;font-weight:700;cursor:pointer}
-  .warn-close:hover{background:#000}
-  .warn-link{font-size:.88rem;color:var(--slate)}
   body.locked{overflow:hidden}
 
   @media(max-width:640px){
@@ -317,8 +342,32 @@
     .hero{padding:60px 0 56px}
     .btn,.btn-lg{width:100%;text-align:center}
     .hero-cta{flex-direction:column}
-    .warn-head,.warn-body{padding-inline:22px}
+    #warning{padding:12px}
+    .warn-box{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}
+    .warn-head,.warn-body,.warn-foot{padding-inline:20px}
+    .warn-head h2{font-size:1.14rem}
+    .warn-stats{grid-template-columns:1fr}
   }
+  /* Short viewports (13" laptops, landscape phones): compress the dialog
+     rather than let the body scroll. Content-independent, so it holds even
+     if the copy above is edited later. */
+  @media(max-height:790px){
+    #warning{padding:12px}
+    .warn-box{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px)}
+    .warn-head{padding:14px 26px}
+    .warn-head h2{font-size:1.12rem}
+    .warn-head .tag{margin-bottom:4px}
+    .warn-body{padding:14px 26px 15px}
+    .warn-body p{font-size:.9rem;margin-bottom:11px}
+    .warn-stats{margin:11px 0;gap:7px}
+    .warn-stats div{padding:8px 11px}
+    .warn-stats b{font-size:.95rem}
+    .warn-alt{padding:10px 12px;margin-top:12px}
+    .warn-foot{padding:12px 26px 14px}
+    .warn-learn{padding:11px 20px;font-size:.98rem}
+    .warn-actions{margin-top:9px}
+  }
+
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   }
@@ -739,90 +788,55 @@
      ========================================================================= -->
 <div id="warning" hidden role="dialog" aria-modal="true" aria-labelledby="warn-title">
   <div class="warn-box">
+
+    <!-- pinned -->
     <div class="warn-head">
       <p class="tag">Stop &mdash; please read this</p>
       <h2 id="warn-title">Buying fake reviews is illegal, and the penalties fall on you</h2>
     </div>
+
+    <!-- scrolls internally only if the viewport is very short -->
     <div class="warn-body">
       <p>
-        Nothing is for sale on this website. <strong>No reviews are sold here and no payments are
-        accepted.</strong> This page exists to reach people at the moment they consider buying fake
-        reviews &mdash; because most never see what actually happens next.
-      </p>
-      <p>
-        Purchasing fake reviews is unlawful across the United States, the United Kingdom and the
-        European Union. It has already produced a criminal conviction and a prison sentence.
+        <strong>Nothing here is for sale.</strong> No reviews are sold and no payments are accepted.
+        This page exists to reach you at the moment you were about to buy.
       </p>
 
-      <ul class="warn-facts">
-        <li><b>United States.</b> The FTC's Consumer Reviews and Testimonials Rule carries civil penalties of up to <b>$53,088 per violation</b> &mdash; and a package of reviews can constitute many violations, not one.</li>
-        <li><b>United Kingdom.</b> Under the DMCC Act 2024 the CMA can fine a business up to <b>10% of annual global turnover</b>, imposed directly without going to court.</li>
-        <li><b>European Union.</b> Commissioning fake reviews is a blacklisted practice, prohibited in all circumstances, with no assessment of harm or intent.</li>
-        <li><b>Italy, 2018.</b> The operator of a review-selling business was sentenced to <b>nine months' imprisonment</b> plus &euro;8,000 in costs.</li>
-      </ul>
-
-      <p>
-        Platform penalties arrive separately, and usually months after the seller has been paid and
-        become uncontactable: reviews removed, ranking penalties lasting a year, disqualification
-        from awards, a <strong>public warning badge on your own listing</strong> where your customers
-        can see it, and in some cases suspension of your profile &mdash; which can take your genuine
-        reviews with it.
-      </p>
-      <p>
-        Every guarantee on the page behind this notice is one a seller cannot honour. No seller
-        controls whether a platform removes a review, detection is applied retrospectively to content
-        already published, and a contract to commit an unlawful act is unenforceable anywhere.
-        The seller keeps your money, your listing URL, and documentary proof of what you commissioned.
-      </p>
-
-      <div class="warn-ctr">
-        <h3>The Coalition for Trusted Reviews</h3>
-        <p>
-          A cross-industry group founded in 2023 to safeguard trustworthy consumer reviews worldwide.
-          Members include Amazon, Booking.com, Expedia Group, G2, HolidayCheck, Tripadvisor and
-          Trustpilot, who share intelligence on fraudulent operators with one another.
-        </p>
-        <ul>
-          <li>Ask every customer for a review, not only the ones you expect to be positive.</li>
-          <li>Use your platform's own review-request tools &mdash; those reviews can't be taken away.</li>
-          <li>Never offer discounts, prizes or refunds in exchange for a review.</li>
-          <li>If a competitor's rating looks implausible, report it. Platforms act on reports.</li>
-        </ul>
-        <p style="margin-top:12px">
-          More at <a href="https://www.coalitionfortrustedreviews.com">coalitionfortrustedreviews.com</a>
-          &middot; <a href="mailto:coalitionfortrustedreviewspauk@dgagroup.com">contact the Coalition</a>
-        </p>
+      <div class="warn-stats">
+        <div><b>$53,088</b><span>US penalty, per violation</span></div>
+        <div><b>10% of turnover</b><span>UK ceiling, no court needed</span></div>
+        <div><b>Banned outright</b><span>EU: prohibited in all cases</span></div>
+        <div><b>9 months in prison</b><span>Already handed down, Italy</span></div>
       </div>
 
-      <!-- Links into the warning layer. This is what turns the interstitial from
-           a dead end into somewhere to go. Absolute paths, real anchors, crawlable. -->
-      <div class="warn-more">
-        <p class="warn-more-h">Before you close this &mdash; the detail behind the summary</p>
-        <ul>
-          <li>
-            <a href="/answers/what-happens-if-you-buy-fake-reviews.html">What actually happens to businesses that buy reviews</a>
-            <span>Every penalty, in the order it arrives &mdash; and why the net effect on your visibility is negative, not neutral.</span>
-          </li>
-          <li>
-            <a href="/answers/can-you-get-caught-buying-reviews.html">Can you actually get caught?</a>
-            <span>How detection really works, and why your exposure is set by the seller&rsquo;s least careful customer rather than by your own caution.</span>
-          </li>
-          <li>
-            <a href="/answers/is-it-illegal-to-buy-reviews.html">Is it illegal to buy reviews?</a>
-            <span>The US, UK and EU rules in full, with the penalty ceilings and who is actually liable.</span>
-          </li>
-          <li>
-            <a href="/answers/scammed-buying-reviews.html">Already paid a review seller?</a>
-            <span>The extortion pattern, why paying never ends it, and why self-reporting destroys the seller&rsquo;s leverage over you.</span>
-          </li>
-        </ul>
-      </div>
+      <p>
+        Penalties land months later, long after the seller is gone: reviews removed, a year-long
+        ranking penalty, and a <strong>public warning badge your customers can see</strong>.
+      </p>
 
-      <div class="warn-foot">
-        <button class="warn-close" type="button" data-close>I understand &mdash; close this</button>
-        <a class="warn-all" href="/answers/">See all the facts &rarr;</a>
+      <div class="warn-alt">
+        <b>There is a version of this that works.</b> Ask every customer, use your platform&rsquo;s
+        own review tools, offer nothing in return. Slower &mdash; and nobody can take those reviews away.
+        <span class="warn-attr">
+          An awareness initiative of the
+          <a href="https://www.coalitionfortrustedreviews.com">Coalition for Trusted Reviews</a> &mdash;
+          Amazon, Booking.com, Expedia Group, G2, HolidayCheck, Tripadvisor, Trustpilot.
+        </span>
       </div>
     </div>
+
+    <!-- pinned: always visible, whatever the viewport height -->
+    <div class="warn-foot">
+      <a class="warn-learn" href="/answers/">
+        Learn more &rarr;
+        <small>The law, how platforms detect this, and what really happens next</small>
+      </a>
+      <div class="warn-actions">
+        <a class="warn-paid" href="/answers/scammed-buying-reviews.html">Already paid a seller? &rarr;</a>
+        <button class="warn-close" type="button" data-close>Close this window</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -831,17 +845,20 @@
   "use strict";
 
   var modal = document.getElementById("warning");
-  var box   = modal.querySelector(".warn-box");
+
   var last  = null;
 
   function open(trigger) {
     last = document.activeElement;
     modal.hidden = false;
     document.body.classList.add("locked");
-    box.scrollTop = 0;
-    modal.scrollTop = 0;
-    var btn = modal.querySelector("[data-close]");
-    if (btn) btn.focus();
+    // Reset the internal scroller so repeat opens always start at the top.
+    var bodyEl = modal.querySelector(".warn-body");
+    if (bodyEl) bodyEl.scrollTop = 0;
+    // Focus the primary action ("Learn more"), not the dismiss link, so
+    // keyboard and screen-reader users land on the route onward first.
+    var first = modal.querySelector(".warn-learn") || modal.querySelector("[data-close]");
+    if (first) first.focus();
 
     // Conversion event. This — not sessions — is the metric that matters:
     // how many would-be buyers actually saw the warning.
