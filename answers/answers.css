@@ -2,238 +2,355 @@
    ReviewsForSale.com — /answers/ warning layer
    Shared stylesheet.
 
+   BRANDING: aligned to coalitionfortrustedreviews.com.
+   Typography and palette taken from the live site: Poppins 500
+   headings, Sen 400/700 body, indigo header field, royal-blue
+   headings and links, orange accent rules.
+
    DESIGN INTENT: these pages must look and feel DIFFERENT from
-   the storefront. The storefront imitates a review seller. This
-   section is a credible, plainly-presented consumer-protection
-   resource. Visual separation is deliberate — it is what tells a
-   human spam reviewer at Google that the domain is not a
-   deceptive commercial site.
+   the storefront at the root of this domain. The storefront
+   imitates a review seller. This section is plainly the
+   Coalition speaking in its own voice. That visual separation is
+   what tells a human reviewer at a search engine that the domain
+   is not a single deceptive commercial site.
    ============================================================ */
 
+/* ------------------------------------------------------------
+   COALITION BRAND PALETTE
+
+   Sampled directly from coalitionfortrustedreviews.com. The three
+   brand values were read off solid interior pixels — the indigo
+   header field, the royal-blue hero band, and the orange logo
+   mark, which matched the orange underline devices and the button
+   to the byte. Not guesses.
+
+   How the Coalition uses them, and so how this section does:
+     indigo  — header and footer fields only
+     blue    — headings and links (their "About us" heading colour)
+     orange  — accents: rules, the underline device, the logo mark
+   ------------------------------------------------------------ */
 :root {
-  --ctr-navy: #10284b;
-  --ctr-navy-light: #1d3f6f;
-  --ctr-orange: #e8730c;
-  --ink: #17202e;
-  --ink-soft: #4a5568;
-  --rule: #dde3ec;
-  --bg: #ffffff;
-  --bg-tint: #f5f7fa;
-  --warn-bg: #fdf6ec;
-  --warn-border: #e8730c;
-  --danger-bg: #fdf0ef;
-  --danger-border: #c0392b;
-  --max: 44rem;
+  --ctr-indigo:      #17006C;   /* header + footer field            */
+  --ctr-indigo-deep: #10004C;   /* footer, deepened                 */
+  --ctr-blue:        #3B41C5;   /* headings, links                  */
+  --ctr-orange:      #E86D44;   /* accent: rules, marks, borders    */
+  --ctr-orange-deep: #A74E31;   /* orange as TEXT on light bg (AA)  */
+
+  /* Kept as aliases so no other rule in this file needs editing. */
+  --ctr-navy:        var(--ctr-indigo);
+  --ctr-navy-deep:   var(--ctr-indigo-deep);
+
+  /* Derived — no need to touch these. */
+  --ink:        #1b2434;
+  --ink-soft:   #55617a;
+  --rule:       #e2e7f0;
+  --bg:         #ffffff;
+  --bg-tint:    #f5f7fb;
+  --warn-bg:    #fdf4ec;
+  --danger-bg:  #fdf1ef;
+  --danger-line:#c0392b;
+
+  --font-head: "Poppins", "Century Gothic", "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Sen", "Avenir Next", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+
+  --radius: 8px;
+  --max: 46rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  line-height: 1.68;
+  font-weight: 400;
 }
 
-/* ---------- Disclosure banner ----------
+/* ---------- Coalition header ----------
+   Mirrors the Coalition's solid dark header: indigo field, white
+   type, orange accent rule beneath.
+--------------------------------------- */
+.masthead {
+  background: var(--ctr-navy);
+  border-bottom: 4px solid var(--ctr-orange);
+  padding: 20px 1.25rem;
+}
+.masthead__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Brand lockup.
+   A typographic nod to the Coalition mark (orange quote device +
+   two-line wordmark), NOT a redraw of the logo.
+
+   TO USE THE OFFICIAL LOGO: drop the asset in as
+   answers/ctr-logo.svg, then in each page swap the two <span>s
+   for the commented-out <img> in the masthead markup. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.brand__mark {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  line-height: 0.72;
+  color: var(--ctr-orange);
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.brand__word {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 1.22;
+  letter-spacing: 0.005em;
+  color: #fff;
+  text-transform: none;
+}
+.brand:hover .brand__word { color: #ffd3ad; }
+.ctr-logo { display: block; height: 46px; width: auto; }
+
+.masthead__section {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a9bcd8;
+  margin: 0 0 0 auto;
+  text-align: right;
+}
+.masthead__section a { color: inherit; text-decoration: none; }
+.masthead__section a:hover { color: #fff; }
+@media (max-width: 34rem) {
+  .masthead__section { margin-left: 0; text-align: left; width: 100%; }
+}
+
+/* ---------- Disclosure strip ----------
    Do not remove. This is the single most important element on
    these pages for avoiding a deceptive-content manual action.
-   It must appear above the fold on every page.
------------------------------------------- */
+   It must stay visible without scrolling.
+--------------------------------------- */
 .disclosure {
-  background: var(--ctr-navy);
-  color: #eaf0f8;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--warn-bg);
+  border-bottom: 1px solid #f0dcc6;
+  color: #5c4326;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.55;
   padding: 0.7rem 1.25rem;
 }
 .disclosure__inner { max-width: var(--max); margin: 0 auto; }
-.disclosure a { color: #ffc584; }
-
-/* ---------- Masthead ---------- */
-.masthead {
-  border-bottom: 3px solid var(--ctr-navy);
-  padding: 1.5rem 1.25rem 1.25rem;
-}
-.masthead__inner { max-width: var(--max); margin: 0 auto; }
-.masthead__title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  margin: 0;
-  color: var(--ctr-navy);
-  text-transform: uppercase;
-}
-.masthead__title a { color: inherit; text-decoration: none; }
-.masthead__sub {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  margin: 0.35rem 0 0;
-}
+.disclosure strong { color: var(--ctr-orange-deep); font-weight: 700; }
+.disclosure a { color: var(--ctr-orange-deep); }
 
 /* ---------- Layout ---------- */
-main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
+main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4.5rem; }
 
-.breadcrumb {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  margin: 1.5rem 0 0;
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 500;
+  color: var(--ctr-blue);
+  letter-spacing: -0.008em;
+  margin: 0;
 }
-.breadcrumb a { color: var(--ctr-navy-light); }
-
+/* The Coalition's signature device: an orange rule under the
+   headline. Sized to the text, not the column. */
 h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 0.75rem 0 0;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.85rem, 4.2vw, 2.4rem);
+  line-height: 1.16;
+  margin-top: 0.7rem;
+  padding-bottom: 0.5rem;
+  background-image: linear-gradient(var(--ctr-orange), var(--ctr-orange));
+  background-repeat: no-repeat;
+  background-size: 100% 5px;
+  background-position: 0 100%;
+  display: inline-block;
 }
 h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.3;
-  margin: 2.75rem 0 0.75rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--rule);
+  font-size: 1.3rem;
+  line-height: 1.28;
+  margin: 2.9rem 0 0.8rem;
+  padding-top: 1.3rem;
+  border-top: 2px solid var(--rule);
 }
-h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 1.02rem;
-  margin: 1.75rem 0 0.4rem;
-}
+h3 { font-size: 1.04rem; margin: 1.8rem 0 0.4rem; }
 
-p, ul, ol { margin: 0 0 1.1rem; }
-ul, ol { padding-left: 1.4rem; }
+p, ul, ol { margin: 0 0 1.15rem; }
+ul, ol { padding-left: 1.45rem; }
 li { margin-bottom: 0.5rem; }
+strong { font-weight: 700; }
 
-a { color: var(--ctr-navy-light); }
-a:hover { color: var(--ctr-orange); }
+a { color: var(--ctr-blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ctr-orange-deep); }
+
+.breadcrumb {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1.6rem 0 0;
+}
+.breadcrumb a { color: var(--ctr-blue); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.updated {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0.55rem 0 0;
+}
 
 /* ---------- Answer box ----------
    The direct answer, in the first screen. This is what gets
-   lifted into featured snippets and AI answer panels, so keep
-   it short, declarative and self-contained.
+   lifted into featured snippets and AI answer panels, so keep it
+   short, declarative and self-contained.
 --------------------------------- */
 .answer {
   background: var(--warn-bg);
-  border-left: 5px solid var(--warn-border);
-  padding: 1.15rem 1.35rem;
-  margin: 1.5rem 0 2rem;
+  border-left: 5px solid var(--ctr-orange);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.6rem 0 2.1rem;
 }
 .answer p { margin: 0; }
-.answer p + p { margin-top: 0.75rem; }
-.answer strong { color: #8a3f00; }
+.answer p + p { margin-top: 0.8rem; }
+.answer strong { color: var(--ctr-orange-deep); }
 
 .callout {
   background: var(--bg-tint);
   border: 1px solid var(--rule);
-  padding: 1.15rem 1.35rem;
-  margin: 1.75rem 0;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin: 1.9rem 0;
 }
 .callout > :last-child { margin-bottom: 0; }
 .callout h3 { margin-top: 0; }
 
 .danger {
   background: var(--danger-bg);
-  border-left: 5px solid var(--danger-border);
-  padding: 1.15rem 1.35rem;
-  margin: 1.75rem 0;
+  border-left: 5px solid var(--danger-line);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.2rem 1.4rem;
+  margin: 1.9rem 0;
 }
 .danger > :last-child { margin-bottom: 0; }
 
 /* ---------- Tables ---------- */
-.table-wrap { overflow-x: auto; margin: 1.5rem 0; }
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.88rem;
-}
+.table-wrap { overflow-x: auto; margin: 1.6rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
 th, td {
   text-align: left;
   vertical-align: top;
-  padding: 0.7rem 0.85rem;
+  padding: 0.78rem 0.9rem;
   border-bottom: 1px solid var(--rule);
 }
-th { background: var(--ctr-navy); color: #fff; font-weight: 600; }
+th {
+  background: var(--ctr-navy);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
 tbody tr:nth-child(even) { background: var(--bg-tint); }
+td strong { color: var(--ctr-blue); }
 
 /* ---------- Related links ---------- */
 .related {
-  margin: 3rem 0 0;
-  padding-top: 1.25rem;
-  border-top: 3px solid var(--ctr-navy);
+  margin: 3.2rem 0 0;
+  padding-top: 1.3rem;
+  border-top: 4px solid var(--ctr-orange);
 }
 .related h2 { border-top: 0; padding-top: 0; margin-top: 0; }
 .related ul { list-style: none; padding: 0; }
-.related li { margin-bottom: 0.85rem; }
+.related li { margin-bottom: 0.95rem; }
 .related a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1.02rem;
   text-decoration: none;
+  color: var(--ctr-blue);
 }
-.related span {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
+.related a:hover { color: var(--ctr-orange-deep); text-decoration: underline; }
+.related span { display: block; font-size: 0.9rem; color: var(--ink-soft); margin-top: 2px; }
 
 /* ---------- Hub index cards ---------- */
-.cards { list-style: none; padding: 0; margin: 2rem 0; }
+.cards { list-style: none; padding: 0; margin: 2.1rem 0; }
 .cards li {
   border: 1px solid var(--rule);
   border-left: 5px solid var(--ctr-orange);
-  padding: 1.1rem 1.35rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.15rem 1.4rem;
   margin-bottom: 1rem;
+  transition: border-color .13s ease, background .13s ease;
 }
+.cards li:hover { background: var(--bg-tint); border-color: #cdd6e5; border-left-color: var(--ctr-orange); }
 .cards a {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1.1rem;
   text-decoration: none;
+  color: var(--ctr-blue);
 }
-.cards p { margin: 0.4rem 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+.cards a:hover { color: var(--ctr-orange-deep); }
+.cards p { margin: 0.4rem 0 0; font-size: 0.94rem; color: var(--ink-soft); }
 
 /* ---------- Sources ---------- */
 .sources {
-  margin-top: 3rem;
-  padding-top: 1.25rem;
+  margin-top: 3.2rem;
+  padding-top: 1.3rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--ink-soft);
 }
-.sources h2 { font-size: 1rem; border-top: 0; padding-top: 0; margin: 0 0 0.75rem; }
-.sources ol { padding-left: 1.3rem; }
-.sources li { margin-bottom: 0.4rem; }
-
-.updated {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+.sources h2 {
   font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-top: 0;
+  padding-top: 0;
+  margin: 0 0 0.8rem;
   color: var(--ink-soft);
-  margin: 0.5rem 0 0;
 }
+.sources ol { padding-left: 1.35rem; }
+.sources li { margin-bottom: 0.4rem; }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  border-top: 3px solid var(--ctr-navy);
-  background: var(--bg-tint);
-  padding: 2rem 1.25rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
+  border-top: 4px solid var(--ctr-orange);
+  background: var(--ctr-navy-deep);
+  color: #a9bcd8;
+  padding: 2.4rem 1.25rem 2.1rem;
+  font-size: 0.86rem;
 }
 .site-footer__inner { max-width: var(--max); margin: 0 auto; }
-.site-footer p { margin: 0 0 0.75rem; }
-.site-footer a { color: var(--ctr-navy-light); }
+.site-footer p { margin: 0 0 0.85rem; }
+.site-footer strong { color: #fff; font-weight: 700; }
+.site-footer a { color: #ffc48c; }
+.site-footer a:hover { color: #fff; }
 
 @media (max-width: 34rem) {
-  body { font-size: 17px; }
-  h1 { font-size: 1.6rem; }
+  body { font-size: 16.5px; }
+  h1 { font-size: 1.62rem; }
+  h2 { font-size: 1.16rem; }
+  .brand__mark { font-size: 2.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
 }

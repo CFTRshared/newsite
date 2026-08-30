@@ -13,12 +13,19 @@
 <meta property="og:url" content="https://reviewsforsale.com/answers/is-it-illegal-to-buy-reviews.html">
 <link rel="stylesheet" href="answers.css">
 
+<!-- Coalition typography: Poppins 500 headings, Sen 400/700 body —
+     the same families the Coalition site uses. Both served from Google
+     Fonts; the CSS falls back to close system faces if they don't load. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Sen:wght@400..700&display=swap">
+
 <!-- Vercel Web Analytics. If you use GA4 or Plausible instead, delete these
      two lines and add your own snippet here; track.js supports all three. -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 
-<!-- Fires `answers_read` at 30s dwell or 75% scroll. See track.js. -->
+<!-- Per-page analytics: answers_pageview, answers_landing, answers_read. See track.js. -->
 <script defer src="track.js"></script>
 
 <!--
@@ -84,6 +91,20 @@
 </head>
 <body>
 
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="brand" href="https://www.coalitionfortrustedreviews.com">
+      <!-- OFFICIAL LOGO: drop the asset in as answers/ctr-logo.svg, then
+           replace the two spans below with:
+           <img class="ctr-logo" src="ctr-logo.svg" alt="Coalition for Trusted Reviews"> -->
+      <span class="brand__mark" aria-hidden="true">&ldquo;</span>
+      <span class="brand__word">Coalition for<br>Trusted Reviews</span>
+    </a>
+    <p class="masthead__section"><a href="/answers/">Buying Online Reviews: The Facts</a></p>
+  </div>
+</header>
+
 <div class="disclosure">
   <div class="disclosure__inner">
     <strong>Awareness initiative.</strong> This section is published by the
@@ -94,12 +115,6 @@
   </div>
 </div>
 
-<header class="masthead">
-  <div class="masthead__inner">
-    <p class="masthead__title"><a href="/answers/">Buying Online Reviews: The Facts</a></p>
-    <p class="masthead__sub">An awareness resource from the Coalition for Trusted Reviews</p>
-  </div>
-</header>
 
 <main>
 
