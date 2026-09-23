@@ -28,6 +28,7 @@ Two layers, two jobs:
 | | Storefront (`/`) | Warning layer (`/answers/`) |
 |---|---|---|
 | Job | Intercept buyers at the point of purchase | Get found, get linked, warn people mid-decision |
+| Interstitial | Capped to the viewport: pinned red header, pinned footer, body scrolls internally only if it must | — |
 | Found via | "buy tripadvisor reviews" | "is it illegal to buy reviews" |
 | Linkable by a member's legal team? | No | Yes |
 
@@ -37,11 +38,13 @@ Most `/answers/` traffic arrives straight from search and never touches the stor
 
 ## How the two layers connect
 
-**Storefront → warning layer** (already wired, 9 links):
+**Storefront → warning layer** (already wired):
 
-- 4 links inside the interstitial, one per topic, with a summary line each
-- "See all the facts →" in the interstitial footer
-- 2 footer links on the storefront
+- A full-width **"Learn more →"** button in the interstitial's pinned footer, pointing at `/answers/`. Always on screen, at any viewport height.
+- **"Already paid a seller? →"** next to it, pointing straight at `scammed-buying-reviews.html` — a distinct and urgent need that shouldn't need two clicks.
+- 2 crawlable footer links on the storefront.
+
+The hub at `/answers/` carries the four topic cards, so one prominent door beats four competing ones. Link equity flows storefront → hub → topic pages.
 
 **Warning layer → storefront:** deliberately none. A page that says "buying reviews is illegal, here's where to buy them" is indefensible. The links run one direction only.
 
@@ -64,7 +67,8 @@ GitHub web UI: **Add file → Upload files**, drag the whole contents of this di
 ### Check the preview
 
 - [ ] `/` loads, styled; click any button → interstitial appears
-- [ ] Interstitial's four links all resolve
+- [ ] **Red header and "Learn more" button both visible without scrolling** — check at a few window heights, and try dragging the window short
+- [ ] "Learn more →" goes to `/answers/`; "Already paid a seller?" goes to `scammed-buying-reviews.html`
 - [ ] `Esc` closes the interstitial; so does clicking the backdrop
 - [ ] `/answers/` loads; navy disclosure banner visible without scrolling on all five pages
 - [ ] `/answers` (no trailing slash) redirects to `/answers/`

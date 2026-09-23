@@ -2,7 +2,7 @@
 #
 # This domain is operated as an awareness initiative of the Coalition for
 # Trusted Reviews (coalitionfortrustedreviews.com), whose members include
-# Amazon, Booking.com, Expedia Group, Glassdoor, Tripadvisor and Trustpilot.
+# Amazon, Booking.com, Expedia Group, G2, HolidayCheck, Tripadvisor and Trustpilot.
 #
 # The pages at the root of this domain present a simulated review-selling
 # storefront. No reviews are sold and no payments are accepted; any attempt
