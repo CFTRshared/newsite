@@ -5,6 +5,26 @@
       "source": "/answers",
       "destination": "/answers/",
       "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/#platforms",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/#pricing",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
